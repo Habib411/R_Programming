@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R Programming"
 author: "Habib Ahmad"
-date:   "feb 2, 2021"
+date:   "feb 6, 2021"
 output: html_document
 ---
 ```{r}
@@ -389,7 +389,7 @@ matrix_2
 
 
 ```{r }
-matrix_1 * matrix_2
+# matrix_1 * matrix_2 non comfortable arrays
 ```
 
 
@@ -523,28 +523,32 @@ st-tz5
 
 
 ```{r }
-f <- 100:150
-f
+numbers <- 100:150
+numbers
 ```
 
 
 ```{r }
-mean(f)
-sd(f)
+mean(numbers)
+sd(numbers)
 ```
 
 
 ```{r }
-tapply(f)
+n <- list(numbers = 100:150,rnorm(10))
+lapply(n,mean)
+lapply(n,sd)
 ```
 
 
 ```{r }
-
+sapply(n,mean)
+sapply(n,sd)
 ```
 
 
 ```{r }
+# tapply(n,mean) applies only to vectors
 
 ```
 
@@ -571,12 +575,14 @@ m
 
 
 ```{r }
-
+r <- apply(m,1,mean)
+r
 ```
 
 
 ```{r }
-
+c <- apply(m,2,mean)
+c
 ```
 
 
@@ -614,17 +620,20 @@ library(datasets)
 
 
 ```{r }
-head(Orange)
+p <- head(Orange)
+p
 ```
 
 
 ```{r }
 #### Start solution ####
+
 ```
 
 
 ```{r }
-
+split_data <- split(p, p$circumference,)
+split_data
 ```
 
 
